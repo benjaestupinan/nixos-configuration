@@ -145,6 +145,7 @@ environment.systemPackages = (with pkgs; [
   pkgs.pulseaudio
 
   #pkgs.python310
+  pkgs.pyenv
   pkgs.pkg-config
   pkgs.nodejs
 ]) ++ (with unstable; [
