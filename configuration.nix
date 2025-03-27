@@ -145,7 +145,16 @@ environment.systemPackages = (with pkgs; [
   pkgs.pulseaudio
 
   #pkgs.python310
+  
+  # Dependencias necesarias para instalar python con pyenv
   pkgs.pyenv
+  pkgs.zlib
+  pkgs.libffi
+  pkgs.readline
+  pkgs.bzip2
+  pkgs.openssl
+  pkgs.ncurses
+
   pkgs.pkg-config
   pkgs.nodejs
 ]) ++ (with unstable; [
