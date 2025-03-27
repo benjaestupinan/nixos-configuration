@@ -111,56 +111,49 @@ in {
   # Install firefox.
   programs.firefox.enable = true;
 
-fonts.packages = with pkgs; [
-  fira-code-nerdfont
-];
+  fonts.packages = with pkgs; [
+    fira-code-nerdfont
+  ];
 
-nixpkgs.config.pulseaudio = true;
+  nixpkgs.config.pulseaudio = true;
 
-# List packages installed in system profile. To search, run:
-# $ nix search wget
-nixpkgs.config.allowUnfree = true;
-environment.systemPackages = (with pkgs; [
-  # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  pkgs.gcc
-  pkgs.gnumake
-  pkgs.neovim
-  pkgs.brave
-  pkgs.kitty
-  pkgs.lf
-  pkgs.vscode
-  pkgs.git
-  pkgs.neofetch
-  pkgs.killall
-  pkgs.slack
-  pkgs.spotify
-  pkgs.poetry
-  pkgs.beekeeper-studio
-  pkgs.ruff
-  pkgs.lsof
-  pkgs.google-cloud-sdk
-  pkgs.whatsapp-for-linux
-
-  pkgs.pulseaudio
-
-  #pkgs.python310
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  nixpkgs.config.allowUnfree = true;
+  environment.systemPackages = (with pkgs; [
+    # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
+    pkgs.gcc
+    pkgs.gnumake
+    pkgs.neovim
+    pkgs.brave
+    pkgs.kitty
+    pkgs.lf
+    pkgs.vscode
+    pkgs.git
+    pkgs.neofetch
+    pkgs.killall
+    pkgs.slack
+    pkgs.spotify
+    pkgs.poetry
+    pkgs.beekeeper-studio
+    pkgs.ruff
+    pkgs.lsof
+    pkgs.google-cloud-sdk
+    pkgs.whatsapp-for-linux
   
-  # Dependencias necesarias para instalar python con pyenv
-  pkgs.pyenv
-  pkgs.zlib
-  pkgs.libffi
-  pkgs.readline
-  pkgs.bzip2
-  pkgs.openssl
-  pkgs.ncurses
+    pkgs.pulseaudio
+  
+    #pkgs.python310
+  
+    pkgs.pkg-config
+    pkgs.nodejs
+  ]) ++ (with unstable; [
+    # aqui van paquetes inestables
+  ]);
 
-  pkgs.pkg-config
-  pkgs.nodejs
-]) ++ (with unstable; [
-  # aqui van paquetes inestables
-]);
-virtualisation.virtualbox.host.enable = true;
+  # this is needed for vbox to work
+  virtualisation.virtualbox.host.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -188,5 +181,4 @@ virtualisation.virtualbox.host.enable = true;
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
-  }
+}
