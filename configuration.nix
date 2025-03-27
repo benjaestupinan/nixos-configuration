@@ -144,7 +144,7 @@ in {
   
     pkgs.pulseaudio
   
-    #pkgs.python310
+    pkgs.python310
   
     pkgs.pkg-config
     pkgs.nodejs
