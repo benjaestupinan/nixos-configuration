@@ -146,8 +146,7 @@ in {
   
     pkgs.python310
     pkgs.openssl
-    pkgs.zli
-    pkgs.zlibb
+    pkgs.zlib
   
     pkgs.pkg-config
     pkgs.nodejs
