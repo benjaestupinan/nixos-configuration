@@ -145,6 +145,7 @@ in {
     pkgs.pulseaudio
   
     pkgs.python310
+    pkgs.openssl
   
     pkgs.pkg-config
     pkgs.nodejs
