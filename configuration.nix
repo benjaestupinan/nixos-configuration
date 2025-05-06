@@ -104,9 +104,9 @@ in {
     enable = true;
 
     # Deshabilitar bridge por defecto para evitar conflictos de red
-    extraOptions = ''
-      --bridge=none
-    '';
+    #extraOptions = ''
+    #  --bridge=none
+    #'';
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
