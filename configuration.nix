@@ -25,6 +25,8 @@ in {
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.dns = "default";
+  networking.networkmanager.unmanaged = [ "interface-name:docker0" ];
 
   # Enable Nix Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -98,7 +100,15 @@ in {
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+
+    # Deshabilitar bridge por defecto para evitar conflictos de red
+    extraOptions = ''
+      --bridge=none
+    '';
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.benjaestupinan = {
     isNormalUser = true;
