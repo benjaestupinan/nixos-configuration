@@ -155,7 +155,7 @@ in {
   
     pkgs.pulseaudio
   
-    pkgs.python310
+    pkgs.python311
     pkgs.openssl
     pkgs.zlib
   
