@@ -152,6 +152,7 @@ in {
     pkgs.lsof
     pkgs.google-cloud-sdk
     pkgs.whatsapp-for-linux
+    pkgs.minecraft
   
     pkgs.pulseaudio
   
